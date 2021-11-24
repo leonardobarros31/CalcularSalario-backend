@@ -1,8 +1,11 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 
 from vendedor import Vendedor
 
 api = Flask(__name__)
+cors = CORS(api, resources={r"/api/*": {"origins": "*"}})
+
 
 if __name__ == "__main__":
     api.run(debug=True)
