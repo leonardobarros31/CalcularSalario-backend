@@ -6,14 +6,16 @@ class Vendedor:
         self.valor_venda = valor_venda
 
     def calcular_salario_base(self):
-        if self.meses_contratado < 12:
+        if self.meses_contratado <= 0:
+            return 0.0
+        elif self.meses_contratado <= 12:
             return 1500.0
-        elif self.meses_contratado > 12 and self.meses_contratado < 24:
+        elif self.meses_contratado > 12 and self.meses_contratado <= 24:
             return 2000.0
-        elif self.meses_contratado > 24 and self.meses_contratado <36:
+        elif self.meses_contratado > 24 and self.meses_contratado <= 36:
             return 2500.0
         elif self.meses_contratado > 36:
-            3000.0
+            return 3000.0
 
     def calcular_comissao(self):
         if self.valor_venda < 10000.0:
